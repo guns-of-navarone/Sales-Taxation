@@ -17,3 +17,12 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+
+- script: |
+    cd com/navarone/exceptions    
+    javac ItemNotRegisteredException.java MalformedInputFileException.java UncalculatedException.java    
+    cd ../core
+    javac Register.java State.java StateMachine.java Token.java
+    cd ../salestaxproblem
+    javac BasicTaxableInterface.java ImportTaxableInterface.java Item.java Good.java BasicGood.java Rounder.java
+  displayName: 'All javac'  
